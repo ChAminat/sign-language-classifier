@@ -1,0 +1,29 @@
+data_load:
+  train_csv_path: data/sign_mnist_train.csv
+  val_csv_path: data/sign_mnist_val.csv
+  test_csv_path: data/sign_mnist_test.csv
+  predict_csv_path: data/sign_mnist_pred.csv
+  data_path: data
+  data_zip_name: sign_language_data.zip
+  img_size: 224
+  train_batch_size: 128
+  predict_batch_size: 64
+  url: https://drive.google.com/file/d/1kyXKUoUFC79z7LIvvdWPqi7nR71M0KA4/view?usp=sharing
+model:
+  num_classes: 25
+  in_channels: 1
+  model_local_path: ./checkpoints/
+  save_top_k: 3
+  every_n_epochs: 1
+training:
+  num_epochs: 5
+  train_batch_size: 128
+  predict_batch_size: 64
+  num_workers: 7
+  lr: 0.001
+logging:
+  label: mlflow
+  experiment_name: sign-language-mnist-classification
+  run_name: conv-classifier
+  save_dir: mlflowruns
+  tracking_uri: http://127.0.0.1:8080

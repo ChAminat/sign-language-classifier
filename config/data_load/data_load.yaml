@@ -1,0 +1,11 @@
+train_csv_path: data/sign_mnist_train.csv
+val_csv_path: data/sign_mnist_val.csv
+test_csv_path: data/sign_mnist_test.csv
+predict_csv_path: data/sign_mnist_pred.csv
+data_path: data
+data_zip_name: sign_language_data.zip
+img_size: 224
+train_batch_size: 128
+predict_batch_size: 64
+
+url: "https://drive.google.com/file/d/1kyXKUoUFC79z7LIvvdWPqi7nR71M0KA4/view?usp=sharing"

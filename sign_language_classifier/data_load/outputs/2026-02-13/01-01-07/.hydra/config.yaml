@@ -1,0 +1,26 @@
+data_load:
+  train_csv_path: ../../data/sign_mnist_train.csv
+  val_csv_path: ../../data/sign_mnist_val.csv
+  test_csv_path: ../../data/sign_mnist_test.csv
+  predict_csv_path: ../../data/sign_mnist_pred.csv
+  data_path: ../../data
+  data_zip_name: sign_language_data.zip
+  img_size: 224
+  train_batch_size: 128
+  predict_batch_size: 64
+  url: https://drive.google.com/file/d/1kyXKUoUFC79z7LIvvdWPqi7nR71M0KA4/view?usp=sharing
+model:
+  num_classes: 25
+  in_channels: 1
+  model_local_path: ./checkpoints/
+  save_top_k: 3
+  every_n_epochs: 1
+training:
+  num_epochs: 20
+  train_batch_size: 128
+  predict_batch_size: 64
+  train_num_workers: 4
+  predict_num_workers: 0
+  lr: 0.001
+  factor: 0.5
+  min_lr: 1.0e-06
