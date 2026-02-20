@@ -62,8 +62,5 @@ class ConvClassifier(torch.nn.Module):
         Returns:
             torch.Tensor: Выходные логиты модели.
                 Форма: (batch_size, num_classes)
-
-        Note:
-            Ожидаемый размер входного изображения: 28x28 пикселей.
         """
         return self.model(x)
