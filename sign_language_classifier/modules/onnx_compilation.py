@@ -14,13 +14,13 @@ def main(
     batch_size: int = 1,
 ) -> None:
     """
-    Convert PyTorch Lightning checkpoint to ONNX format and validate.
+    Преобразует чекпоинт .ckpt модели в ONNX.
 
     Args:
-        checkpoint_path: Path to model checkpoint (.ckpt)
-        onnx_output_path: Path where to save ONNX model
-        img_size: Input image size (default: 224)
-        batch_size: Batch size for ONNX export (default: 1)
+        checkpoint_path: путь до чекпоинта модели (.ckpt)
+        onnx_output_path: куда сохранять ONNX
+        img_size: размер изображения (default: 224)
+        batch_size: размер батча для ONNX (default: 1)
     """
     module = SignLanguageCNNModule.load_from_checkpoint(checkpoint_path)
     print("Модель загружена")
@@ -42,7 +42,7 @@ def main(
         opset_version=11,
     )
 
-    print(f"Модель преобразована в onnx и лежит тут: {onnx_output_path}")
+    print(f"Модель преобразована в ONNX и лежит тут: {onnx_output_path}")
 
     ort_session = onnxruntime.InferenceSession(onnx_output_path, providers=["CPUExecutionProvider"])
     input_name = ort_session.get_inputs()[0].name
