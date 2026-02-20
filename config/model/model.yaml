@@ -1,0 +1,5 @@
+num_classes: 25
+in_channels: 1
+model_local_path: "./checkpoints/"
+save_top_k: 3
+every_n_epochs: 1
